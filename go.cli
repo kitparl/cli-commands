@@ -1,0 +1,65 @@
+## 1. Project Initialization & Module Management
+
+- `go mod init <module-path>`
+Initializes a new Go module, creating a go.mod file.
+
+- `go mod tidy`
+Cleans up the go.mod and go.sum files by removing unused dependencies and adding any missing ones.
+
+- `go mod vendor`
+Copies all the dependencies to a vendor/ directory, making your project self-contained.
+This is useful for ensuring all dependencies are packaged with your project.
+
+- `go mod verify`
+Verifies that the dependencies in your module cache match the contents of go.sum
+
+## 2. Building & Running Go Programs
+
+- `go run <file.go>`
+Compiles and runs a Go program directly from source code (useful for small programs or quick testing).
+
+- `go build`
+Compiles the Go code and creates an executable binary file. By default, it builds the binary in the current directory.
+
+- `go install`
+Compiles and installs the binary into the GOBIN directory
+
+- `go run` vs `go build`
+
+`go run` : Quickly runs a Go program without creating a binary.
+`go build` : Creates a binary so that can run later.
+
+## 3. Testing & Benchmarking
+
+- `go test`
+Runs the unit tests in the current package or specified files.
+
+- `go test -v`
+Runs tests in verbose mode, showing details of each test case.
+
+
+## 4. Dependency Management
+
+- `go get <package>`
+Downloads and installs a specific package. It adds the dependency to the go.mod file if not already present.
+
+- `go get -u <package>`
+
+Updates a specific package to the latest version.
+
+- `go list`
+Lists packages or module information.
+
+
+## 5. Formatting & Linting
+
+- `go fmt`
+Formats Go source code according to the official Go style guide. It can format a single file or an entire project.
+
+```
+go fmt main.go
+
+// Format the entire project:
+go fmt ./...
+
+```
